@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package trabajofinal;
-import javax.swing.ImageIcon;
+
+import javax.swing.JFrame;
 
 /**
  *
@@ -58,7 +59,7 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 396, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("CPU", new javax.swing.ImageIcon(getClass().getResource("/images/cpu.png")), jPanel1); // NOI18N
+        jTabbedPane1.addTab("CPU", new javax.swing.ImageIcon(getClass().getResource("/images/cpu.png")), jPanel1, "Información sobre la CPU"); // NOI18N
 
         jButton2.setText("jButton2");
 
@@ -85,7 +86,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(280, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Memoria Principal", jPanel2);
+        jTabbedPane1.addTab("Memoria Principal", new javax.swing.ImageIcon(getClass().getResource("/images/ram.png")), jPanel2); // NOI18N
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -130,6 +131,11 @@ public class Principal extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jList1);
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
@@ -145,9 +151,9 @@ public class Principal extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -160,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Usuarios y Grupos", jPanel4);
+        jTabbedPane1.addTab("Usuarios y Grupos", new javax.swing.ImageIcon(getClass().getResource("/images/person.png")), jPanel4); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,6 +186,11 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        JFrame secondWindow = new InfoUsuario();
+        secondWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        secondWindow.setVisible(true);
+    }//GEN-LAST:event_jList1MouseClicked
     /**
      * @param args the command line arguments
      */
