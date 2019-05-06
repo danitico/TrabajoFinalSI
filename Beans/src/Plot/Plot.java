@@ -10,6 +10,9 @@ package Plot;
  * @author Usuario
  */
 public class Plot extends javax.swing.JPanel {
+    private int i1=0;
+    private int i2=0; 
+    private int i3=0; 
 
     /**
      * Creates new form Plot
@@ -18,6 +21,18 @@ public class Plot extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void setNextImage(){
+            i3++;
+            if(i3==10){
+                i3=0;
+                i2++;
+                if(i2==10){
+                    i2=0;
+                    i1++;
+                }
+            }
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Plot/IMAGENES/frame"+String.valueOf(i1)+String.valueOf(i2)+String.valueOf(i3)+"0.png"))); // NOI18N
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,19 +42,24 @@ public class Plot extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Plot/IMAGENES/frame0000.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jLabel1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jLabel1)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
