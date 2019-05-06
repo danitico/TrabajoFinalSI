@@ -18,6 +18,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -127,9 +128,10 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane1.addTab("Procesos", jPanel3);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "item 6", "item 7", "item 8", "item 9", "item 10", "item 11", "item 12", "item 13", "item 14", "item 15" };
+            String[] strings = { "i62ewr", "rwgr", "gregqe", "adkwufg", "usuario", "rttgfrw", "t4rw", "qerg", "sdpifh", "safoig", "qpreohjuf", "awpiefub", "irgegerg", "ewfw", "rwhvf" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+            public void setElement(int i, String value) { strings[i] = value;}
         });
         jList1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -187,9 +189,11 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        JFrame secondWindow = new InfoUsuario();
+        System.out.println("trabajofinal.Principal.jList1MouseClicked()");
+        JFrame secondWindow = new InfoUsuario(jList1.getModel().getElementAt(jList1.getSelectedIndex()));
         secondWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         secondWindow.setVisible(true);
+        secondWindow.setLocationRelativeTo(null);
     }//GEN-LAST:event_jList1MouseClicked
     /**
      * @param args the command line arguments
