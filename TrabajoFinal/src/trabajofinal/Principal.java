@@ -91,16 +91,34 @@ public class Principal extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "User", "ID", "% CPU", "% RAM"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+        }
 
         jTextField1.setText("jTextField1");
 
@@ -125,7 +143,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Procesos", jPanel3);
+        jTabbedPane1.addTab("Procesos", new javax.swing.ImageIcon(getClass().getResource("/images/procesos.png")), jPanel3); // NOI18N
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "i62ewr", "rwgr", "gregqe", "adkwufg", "usuario", "rttgfrw", "t4rw", "qerg", "sdpifh", "safoig", "qpreohjuf", "awpiefub", "irgegerg", "ewfw", "rwhvf" };
