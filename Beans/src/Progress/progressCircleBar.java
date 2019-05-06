@@ -40,19 +40,17 @@ public class progressCircleBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setLayout(null);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Progress/IMAGENES/0.png"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(0, 0, 250, 250);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("0%");
-        add(jLabel1);
-        jLabel1.setBounds(111, 111, 110, 30);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
         jLabel1.setFont(new Font("Serif", Font.PLAIN, 15));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Progress/IMAGENES/0.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
