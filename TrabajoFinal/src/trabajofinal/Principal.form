@@ -27,9 +27,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="jTabbedPane1" min="-2" pref="676" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,10 +51,16 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTabbedPane1.setFocusable(false);"/>
+      </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel1">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTabbedPane1.setMnemonicAt(0, KeyEvent.VK_1);"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="CPU" toolTip="Informaci&#xf3;n sobre la CPU">
@@ -73,7 +79,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="plot1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="175" max="32767" attributes="0"/>
+                      <EmptySpace pref="302" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -82,7 +88,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="plot1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                      <EmptySpace pref="112" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -93,13 +99,17 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTabbedPane1.setMnemonicAt(1, KeyEvent.VK_2);"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Memoria Principal">
+              <JTabbedPaneConstraints tabName="Memoria Principal" toolTip="Estad&#xed;sticas del uso de la RAM">
                 <Property name="tabTitle" type="java.lang.String" value="Memoria Principal"/>
                 <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/ram.png"/>
                 </Property>
+                <Property name="tabToolTip" type="java.lang.String" value="Estad&#xed;sticas del uso de la RAM"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -113,7 +123,7 @@
                           <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="503" max="32767" attributes="0"/>
+                      <EmptySpace pref="631" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -143,6 +153,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTabbedPane1.setMnemonicAt(2, KeyEvent.VK_3);"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Procesos">
@@ -159,7 +172,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="48" max="32767" attributes="0"/>
+                      <EmptySpace pref="176" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -198,36 +211,10 @@
                 <Component class="javax.swing.JTable" name="jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {&quot;java&quot;, &quot;i62ewr&quot;, 20, null, null},&#xa;        {&quot;firefox&quot;, &quot;i62ewr&quot;, 21, null, null},&#xa;        {&quot;netbeans&quot;, &quot;i62ewr&quot;, 22, null, null},&#xa;        {&quot;eclipse&quot;, &quot;i62ewr&quot;, 23, null, null},&#xa;        {&quot;chrome&quot;, &quot;i62ewr&quot;, 24, null, null},&#xa;        {&quot;samba&quot;, &quot;i62ewr&quot;, 25, null, null},&#xa;        {&quot;wireshark&quot;, &quot;i62ewr&quot;, 26, null, null},&#xa;        {&quot;atom&quot;, &quot;i62ewr&quot;, 27, null, null},&#xa;        {&quot;gedit&quot;, &quot;i62ewr&quot;, 28, null, null},&#xa;        {&quot;vscode&quot;, &quot;i62ewr&quot;, 29, null, null},&#xa;        {&quot;weka&quot;, &quot;i62ewr&quot;, 30, null, null},&#xa;        {&quot;python&quot;, &quot;i62ewr&quot;, 31, null, null},&#xa;        {&quot;keras&quot;, &quot;i62ewr&quot;, 32, null, null},&#xa;        {&quot;office&quot;, &quot;i62ewr&quot;, 33, null, null},&#xa;        {&quot;libreoffice&quot;, &quot;i62ewr&quot;, 34, null, null},&#xa;        {&quot;tdesktop&quot;, &quot;i62ewr&quot;, 35, null, null},&#xa;        {&quot;sicome&quot;, &quot;i62ewr&quot;, 36, null, null},&#xa;        {&quot;php&quot;, &quot;i62ewr&quot;, 37, null, null},&#xa;        {&quot;javascript&quot;, &quot;i62ewr&quot;, 38, null, null},&#xa;        {&quot;run.sh&quot;, &quot;i62ewr&quot;, 39, null, null},&#xa;        {&quot;mcafee.sh&quot;, &quot;i62ewr&quot;, 40, null, null},&#xa;        {&quot;sublime&quot;, &quot;i62ewr&quot;, 41, null, null},&#xa;        {&quot;opencv.sh&quot;, &quot;i62ewr&quot;, 42, null, null},&#xa;        {&quot;gnuplot&quot;, &quot;i62ewr&quot;, 43, null, null}&#xa;    },&#xa;    new String [] {&#xa;        &quot;Name&quot;, &quot;User&quot;, &quot;ID&quot;, &quot;% CPU&quot;, &quot;% RAM&quot;&#xa;    }&#xa;) {&#xa;    Class[] types = new Class [] {&#xa;        java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class&#xa;    };&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false&#xa;    };&#xa;&#xa;    public Class getColumnClass(int columnIndex) {&#xa;        return types [columnIndex];&#xa;    }&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
+                      <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {&quot;java&quot;, &quot;i62ewr&quot;, 20, 1, null},&#xa;        {&quot;firefox&quot;, &quot;i62ewr&quot;, 21, 2, null},&#xa;        {&quot;netbeans&quot;, &quot;i62ewr&quot;, 22, 2, null},&#xa;        {&quot;eclipse&quot;, &quot;i62ewr&quot;, 23, 1, null},&#xa;        {&quot;chrome&quot;, &quot;i62ewr&quot;, 24, 15, null},&#xa;        {&quot;samba&quot;, &quot;i62ewr&quot;, 25, 3, null},&#xa;        {&quot;wireshark&quot;, &quot;i62ewr&quot;, 26, 2, null},&#xa;        {&quot;atom&quot;, &quot;i62ewr&quot;, 27, 1, null},&#xa;        {&quot;gedit&quot;, &quot;i62ewr&quot;, 28, 1, null},&#xa;        {&quot;vscode&quot;, &quot;i62ewr&quot;, 29, 1, null},&#xa;        {&quot;weka&quot;, &quot;i62ewr&quot;, 30, 5, null},&#xa;        {&quot;python&quot;, &quot;i62ewr&quot;, 31, 10, null},&#xa;        {&quot;keras&quot;, &quot;i62ewr&quot;, 32, 4, null},&#xa;        {&quot;office&quot;, &quot;i62ewr&quot;, 33, 2, null},&#xa;        {&quot;libreoffice&quot;, &quot;i62ewr&quot;, 34, 2, null},&#xa;        {&quot;tdesktop&quot;, &quot;i62ewr&quot;, 35, 1, null},&#xa;        {&quot;sicome&quot;, &quot;i62ewr&quot;, 36, 2, null},&#xa;        {&quot;php&quot;, &quot;i62ewr&quot;, 37, 7, null},&#xa;        {&quot;javascript&quot;, &quot;i62ewr&quot;, 38, 5, null},&#xa;        {&quot;run.sh&quot;, &quot;i62ewr&quot;, 39, 1, null},&#xa;        {&quot;mcafee.sh&quot;, &quot;i62ewr&quot;, 40, 1, null},&#xa;        {&quot;sublime&quot;, &quot;i62ewr&quot;, 41, 1, null},&#xa;        {&quot;opencv.sh&quot;, &quot;i62ewr&quot;, 42, 1, null},&#xa;        {&quot;gnuplot&quot;, &quot;i62ewr&quot;, 43, 1, null}&#xa;    },&#xa;    new String [] {&#xa;        &quot;Name&quot;, &quot;User&quot;, &quot;ID&quot;, &quot;% CPU&quot;, &quot;% RAM&quot;&#xa;    }&#xa;) {&#xa;    Class[] types = new Class [] {&#xa;        java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class&#xa;    };&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false&#xa;    };&#xa;&#xa;    public Class getColumnClass(int columnIndex) {&#xa;        return types [columnIndex];&#xa;    }&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="jTable1.setAutoCreateRowSorter(true);">
-                      <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                      </TableColumnModel>
+                      <TableColumnModel selectionModel="0"/>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -252,6 +239,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTabbedPane1.setMnemonicAt(3, KeyEvent.VK_4);"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Usuarios y Grupos">
@@ -266,17 +256,22 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="310" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="330" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="310" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="388" max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
@@ -291,11 +286,21 @@
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jScrollPane3" pref="334" max="32767" attributes="0"/>
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jScrollPane3" pref="334" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -332,14 +337,8 @@
               <SubComponents>
                 <Component class="javax.swing.JList" name="jList2">
                   <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.AbstractListModel&lt;String&gt;() {&#xa;    String[] strings = {&quot;Administrador&quot;, &quot;abc&quot;};&#xa;    public int getSize() { return strings.length; }&#xa;    public String getElementAt(int i) { return strings[i]; }&#xa;}" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -358,7 +357,45 @@
                 <Property name="text" type="java.lang.String" value="USUARIOS"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="jButton4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton5"/>
+              </Properties>
+            </Component>
           </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTabbedPane1.setMnemonicAt(4, KeyEvent.VK_5);"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Particiones">
+                <Property name="tabTitle" type="java.lang.String" value="Particiones"/>
+                <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/partition.png"/>
+                </Property>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="798" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="396" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
         </Container>
       </SubComponents>
     </Container>

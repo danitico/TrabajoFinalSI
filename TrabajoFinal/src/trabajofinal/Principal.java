@@ -6,7 +6,7 @@
 package trabajofinal;
 
 import javax.swing.JFrame;
-import java.util.Arrays;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -20,6 +20,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Monitor del Sistema Linux");
     }
 
     /**
@@ -50,10 +51,14 @@ public class Principal extends javax.swing.JFrame {
         jList2 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane1.setBorder(new javax.swing.border.MatteBorder(null));
+        jTabbedPane1.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -62,17 +67,18 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(plot1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(plot1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CPU", new javax.swing.ImageIcon(getClass().getResource("/images/cpu.png")), jPanel1, "Información sobre la CPU"); // NOI18N
+        jTabbedPane1.setMnemonicAt(0, KeyEvent.VK_1);
 
         jButton2.setText("jButton2");
 
@@ -87,7 +93,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
-                .addContainerGap(503, Short.MAX_VALUE))
+                .addContainerGap(631, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,34 +105,35 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(280, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Memoria Principal", new javax.swing.ImageIcon(getClass().getResource("/images/ram.png")), jPanel2); // NOI18N
+        jTabbedPane1.addTab("Memoria Principal", new javax.swing.ImageIcon(getClass().getResource("/images/ram.png")), jPanel2, "Estadísticas del uso de la RAM"); // NOI18N
+        jTabbedPane1.setMnemonicAt(1, KeyEvent.VK_2);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"java", "i62ewr", 20, null, null},
-                {"firefox", "i62ewr", 21, null, null},
-                {"netbeans", "i62ewr", 22, null, null},
-                {"eclipse", "i62ewr", 23, null, null},
-                {"chrome", "i62ewr", 24, null, null},
-                {"samba", "i62ewr", 25, null, null},
-                {"wireshark", "i62ewr", 26, null, null},
-                {"atom", "i62ewr", 27, null, null},
-                {"gedit", "i62ewr", 28, null, null},
-                {"vscode", "i62ewr", 29, null, null},
-                {"weka", "i62ewr", 30, null, null},
-                {"python", "i62ewr", 31, null, null},
-                {"keras", "i62ewr", 32, null, null},
-                {"office", "i62ewr", 33, null, null},
-                {"libreoffice", "i62ewr", 34, null, null},
-                {"tdesktop", "i62ewr", 35, null, null},
-                {"sicome", "i62ewr", 36, null, null},
-                {"php", "i62ewr", 37, null, null},
-                {"javascript", "i62ewr", 38, null, null},
-                {"run.sh", "i62ewr", 39, null, null},
-                {"mcafee.sh", "i62ewr", 40, null, null},
-                {"sublime", "i62ewr", 41, null, null},
-                {"opencv.sh", "i62ewr", 42, null, null},
-                {"gnuplot", "i62ewr", 43, null, null}
+                {"java", "i62ewr", 20, 1, null},
+                {"firefox", "i62ewr", 21, 2, null},
+                {"netbeans", "i62ewr", 22, 2, null},
+                {"eclipse", "i62ewr", 23, 1, null},
+                {"chrome", "i62ewr", 24, 15, null},
+                {"samba", "i62ewr", 25, 3, null},
+                {"wireshark", "i62ewr", 26, 2, null},
+                {"atom", "i62ewr", 27, 1, null},
+                {"gedit", "i62ewr", 28, 1, null},
+                {"vscode", "i62ewr", 29, 1, null},
+                {"weka", "i62ewr", 30, 5, null},
+                {"python", "i62ewr", 31, 10, null},
+                {"keras", "i62ewr", 32, 4, null},
+                {"office", "i62ewr", 33, 2, null},
+                {"libreoffice", "i62ewr", 34, 2, null},
+                {"tdesktop", "i62ewr", 35, 1, null},
+                {"sicome", "i62ewr", 36, 2, null},
+                {"php", "i62ewr", 37, 7, null},
+                {"javascript", "i62ewr", 38, 5, null},
+                {"run.sh", "i62ewr", 39, 1, null},
+                {"mcafee.sh", "i62ewr", 40, 1, null},
+                {"sublime", "i62ewr", 41, 1, null},
+                {"opencv.sh", "i62ewr", 42, 1, null},
+                {"gnuplot", "i62ewr", 43, 1, null}
             },
             new String [] {
                 "Name", "User", "ID", "% CPU", "% RAM"
@@ -148,9 +155,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-        }
         jTable1.setAutoCreateRowSorter(true);
 
         jTextField1.setText("jTextField1");
@@ -168,7 +172,7 @@ public class Principal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -190,6 +194,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Procesos", new javax.swing.ImageIcon(getClass().getResource("/images/procesos.png")), jPanel3); // NOI18N
+        jTabbedPane1.setMnemonicAt(2, KeyEvent.VK_3);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "i62ewr", "rwgr", "gregqe", "adkwufg", "usuario", "rttgfrw", "t4rw", "qerg", "sdpifh", "safoig", "qpreohjuf", "awpiefub", "irgegerg", "ewfw", "rwhvf" };
@@ -205,7 +210,7 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jList1);
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {"Administrador", "abc"};
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -215,6 +220,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setText("USUARIOS");
 
+        jButton4.setText("jButton4");
+
+        jButton5.setText("jButton5");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -222,13 +231,17 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(135, 135, 135)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 388, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(150, 150, 150))
         );
@@ -240,21 +253,43 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5)
+                        .addGap(167, 167, 167))))
         );
 
         jTabbedPane1.addTab("Usuarios y Grupos", new javax.swing.ImageIcon(getClass().getResource("/images/person.png")), jPanel4); // NOI18N
+        jTabbedPane1.setMnemonicAt(3, KeyEvent.VK_4);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 798, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 396, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Particiones", new javax.swing.ImageIcon(getClass().getResource("/images/partition.png")), jPanel5); // NOI18N
+        jTabbedPane1.setMnemonicAt(4, KeyEvent.VK_5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +302,6 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        System.out.println("trabajofinal.Principal.jList1MouseClicked()");
         JFrame secondWindow = new InfoUsuario(jList1.getModel().getElementAt(jList1.getSelectedIndex()));
         secondWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         secondWindow.setVisible(true);
@@ -316,6 +350,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
@@ -324,6 +360,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
