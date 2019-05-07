@@ -6,7 +6,7 @@
 package trabajofinal;
 
 import javax.swing.JFrame;
-import java.util.Arrays;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -74,6 +74,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("CPU", new javax.swing.ImageIcon(getClass().getResource("/images/cpu.png")), jPanel1, "Información sobre la CPU"); // NOI18N
+        jTabbedPane1.setMnemonicAt(0, KeyEvent.VK_1);
 
         jButton2.setText("jButton2");
 
@@ -100,34 +101,35 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(280, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Memoria Principal", new javax.swing.ImageIcon(getClass().getResource("/images/ram.png")), jPanel2); // NOI18N
+        jTabbedPane1.addTab("Memoria Principal", new javax.swing.ImageIcon(getClass().getResource("/images/ram.png")), jPanel2, "Estadísticas del uso de la RAM"); // NOI18N
+        jTabbedPane1.setMnemonicAt(1, KeyEvent.VK_2);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"java", "i62ewr", 20, null, null},
-                {"firefox", "i62ewr", 21, null, null},
-                {"netbeans", "i62ewr", 22, null, null},
-                {"eclipse", "i62ewr", 23, null, null},
-                {"chrome", "i62ewr", 24, null, null},
-                {"samba", "i62ewr", 25, null, null},
-                {"wireshark", "i62ewr", 26, null, null},
-                {"atom", "i62ewr", 27, null, null},
-                {"gedit", "i62ewr", 28, null, null},
-                {"vscode", "i62ewr", 29, null, null},
-                {"weka", "i62ewr", 30, null, null},
-                {"python", "i62ewr", 31, null, null},
-                {"keras", "i62ewr", 32, null, null},
-                {"office", "i62ewr", 33, null, null},
-                {"libreoffice", "i62ewr", 34, null, null},
-                {"tdesktop", "i62ewr", 35, null, null},
-                {"sicome", "i62ewr", 36, null, null},
-                {"php", "i62ewr", 37, null, null},
-                {"javascript", "i62ewr", 38, null, null},
-                {"run.sh", "i62ewr", 39, null, null},
-                {"mcafee.sh", "i62ewr", 40, null, null},
-                {"sublime", "i62ewr", 41, null, null},
-                {"opencv.sh", "i62ewr", 42, null, null},
-                {"gnuplot", "i62ewr", 43, null, null}
+                {"java", "i62ewr", 20, 1, null},
+                {"firefox", "i62ewr", 21, 2, null},
+                {"netbeans", "i62ewr", 22, 2, null},
+                {"eclipse", "i62ewr", 23, 1, null},
+                {"chrome", "i62ewr", 24, 15, null},
+                {"samba", "i62ewr", 25, 3, null},
+                {"wireshark", "i62ewr", 26, 2, null},
+                {"atom", "i62ewr", 27, 1, null},
+                {"gedit", "i62ewr", 28, 1, null},
+                {"vscode", "i62ewr", 29, 1, null},
+                {"weka", "i62ewr", 30, 5, null},
+                {"python", "i62ewr", 31, 10, null},
+                {"keras", "i62ewr", 32, 4, null},
+                {"office", "i62ewr", 33, 2, null},
+                {"libreoffice", "i62ewr", 34, 2, null},
+                {"tdesktop", "i62ewr", 35, 1, null},
+                {"sicome", "i62ewr", 36, 2, null},
+                {"php", "i62ewr", 37, 7, null},
+                {"javascript", "i62ewr", 38, 5, null},
+                {"run.sh", "i62ewr", 39, 1, null},
+                {"mcafee.sh", "i62ewr", 40, 1, null},
+                {"sublime", "i62ewr", 41, 1, null},
+                {"opencv.sh", "i62ewr", 42, 1, null},
+                {"gnuplot", "i62ewr", 43, 1, null}
             },
             new String [] {
                 "Name", "User", "ID", "% CPU", "% RAM"
@@ -149,9 +151,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-        }
         jTable1.setAutoCreateRowSorter(true);
 
         jTextField1.setText("jTextField1");
@@ -191,6 +190,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Procesos", new javax.swing.ImageIcon(getClass().getResource("/images/procesos.png")), jPanel3); // NOI18N
+        jTabbedPane1.setMnemonicAt(2, KeyEvent.VK_3);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "i62ewr", "rwgr", "gregqe", "adkwufg", "usuario", "rttgfrw", "t4rw", "qerg", "sdpifh", "safoig", "qpreohjuf", "awpiefub", "irgegerg", "ewfw", "rwhvf" };
@@ -248,6 +248,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Usuarios y Grupos", new javax.swing.ImageIcon(getClass().getResource("/images/person.png")), jPanel4); // NOI18N
+        jTabbedPane1.setMnemonicAt(3, KeyEvent.VK_4);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -261,6 +262,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Particiones", new javax.swing.ImageIcon(getClass().getResource("/images/partition.png")), jPanel5); // NOI18N
+        jTabbedPane1.setMnemonicAt(4, KeyEvent.VK_5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -281,7 +283,6 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        System.out.println("trabajofinal.Principal.jList1MouseClicked()");
         JFrame secondWindow = new InfoUsuario(jList1.getModel().getElementAt(jList1.getSelectedIndex()));
         secondWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         secondWindow.setVisible(true);
