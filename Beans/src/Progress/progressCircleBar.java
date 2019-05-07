@@ -6,7 +6,6 @@
 
 package Progress;
 
-import java.awt.Font;
 /**
  *
  * @author i62cumuj
@@ -16,8 +15,9 @@ public class progressCircleBar extends javax.swing.JPanel {
     /**
      * Creates new form progressCircleBar
      */
-    public progressCircleBar() {
+    public progressCircleBar(int i) {
         initComponents();
+        setProgress(i);
     }
 
     public void setProgress(int i){
@@ -43,14 +43,19 @@ public class progressCircleBar extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(null);
 
         jLabel1.setText("0%");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
-        jLabel1.setFont(new Font("Serif", Font.PLAIN, 15));
+        add(jLabel1);
+        jLabel1.setBounds(30, 30, 30, 14);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Progress/IMAGENES/0.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 75, 75);
+        jLabel1.setText(String.valueOf(progress)+"%");
+        int i=progress/10;
+        int j=i*10;
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Progress/IMAGENES/"+j+".png")));
     }// </editor-fold>//GEN-END:initComponents
 
 

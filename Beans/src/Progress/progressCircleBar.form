@@ -15,19 +15,16 @@
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-    <Property name="useNullLayout" type="boolean" value="false"/>
+    <Property name="useNullLayout" type="boolean" value="true"/>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0%"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel1.setFont(new Font(&quot;Serif&quot;, Font.PLAIN, 15));"/>
-      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="30" width="-1" height="-1"/>
+          <AbsoluteConstraints x="30" y="30" width="30" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -37,6 +34,9 @@
           <Image iconType="3" name="/Progress/IMAGENES/0.png"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel1.setText(String.valueOf(progress)+&quot;%&quot;);&#xa;        int i=progress/10;&#xa;        int j=i*10;&#xa;        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Progress/IMAGENES/&quot;+j+&quot;.png&quot;)));"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
