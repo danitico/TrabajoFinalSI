@@ -24,7 +24,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    public Principal() {
+    public Principal(){
         initComponents();
         Random rand = new Random();
         this.setLocationRelativeTo(null);
@@ -34,15 +34,15 @@ public class Principal extends javax.swing.JFrame {
          @Override
             public void actionPerformed(ActionEvent e)
             { 
-                        plot1.setNextImage();
-                        cpu1=((int) Math.round(rand.nextDouble()*2*cpu1))%100;
-                        cpu2=((int) Math.round(rand.nextDouble()*2*cpu2))%100;
-                        cpu3=((int) Math.round(rand.nextDouble()*2*cpu3))%100;
-                        cpu4=((int) Math.round(rand.nextDouble()*2*cpu4))%100;
-                        progressCircleBar2.setProgress(cpu1);
-                        progressCircleBar3.setProgress(cpu2);
-                        progressCircleBar4.setProgress(cpu3);
-                        progressCircleBar5.setProgress(cpu4);                       
+                plot1.setNextImage();
+                cpu1=((int) Math.round(rand.nextDouble()*2*cpu1))%100;
+                cpu2=((int) Math.round(rand.nextDouble()*2*cpu2))%100;
+                cpu3=((int) Math.round(rand.nextDouble()*2*cpu3))%100;
+                cpu4=((int) Math.round(rand.nextDouble()*2*cpu4))%100;
+                progressCircleBar2.setProgress(cpu1);
+                progressCircleBar3.setProgress(cpu2);
+                progressCircleBar4.setProgress(cpu3);
+                progressCircleBar5.setProgress(cpu4);                       
             }
         }); 
         timer.start();
@@ -75,8 +75,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -89,6 +87,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jTabbedPane1.setBorder(new javax.swing.border.MatteBorder(null));
         jTabbedPane1.setFocusable(false);
@@ -194,30 +193,30 @@ public class Principal extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"java", "i62ewr", 20, 1, null},
-                {"firefox", "i62ewr", 21, 2, null},
-                {"netbeans", "i62ewr", 22, 2, null},
-                {"eclipse", "i62ewr", 23, 1, null},
-                {"chrome", "i62ewr", 24, 15, null},
-                {"samba", "i62ewr", 25, 3, null},
-                {"wireshark", "i62ewr", 26, 2, null},
-                {"atom", "i62ewr", 27, 1, null},
-                {"gedit", "i62ewr", 28, 1, null},
-                {"vscode", "i62ewr", 29, 1, null},
-                {"weka", "i62ewr", 30, 5, null},
-                {"python", "i62ewr", 31, 10, null},
-                {"keras", "i62ewr", 32, 4, null},
-                {"office", "i62ewr", 33, 2, null},
-                {"libreoffice", "i62ewr", 34, 2, null},
-                {"tdesktop", "i62ewr", 35, 1, null},
-                {"sicome", "i62ewr", 36, 2, null},
-                {"php", "i62ewr", 37, 7, null},
-                {"javascript", "i62ewr", 38, 5, null},
-                {"run.sh", "i62ewr", 39, 1, null},
-                {"mcafee.sh", "i62ewr", 40, 1, null},
-                {"sublime", "i62ewr", 41, 1, null},
-                {"opencv.sh", "i62ewr", 42, 1, null},
-                {"gnuplot", "i62ewr", 43, 1, null}
+                {"java", "i62ewr", 20, 1, 5},
+                {"firefox", "i62ewr", 21, 2, 1},
+                {"netbeans", "i62ewr", 22, 2, 2},
+                {"eclipse", "i62ewr", 23, 1, 10},
+                {"chrome", "i62ewr", 24, 15, 40},
+                {"samba", "i62ewr", 25, 3, 1},
+                {"wireshark", "i62ewr", 26, 2, 5},
+                {"atom", "i62ewr", 27, 1, 5},
+                {"gedit", "i62ewr", 28, 1, 1},
+                {"vscode", "i62ewr", 29, 1, 5},
+                {"weka", "i62ewr", 30, 5, 5},
+                {"python", "i62ewr", 31, 10, 5},
+                {"keras", "i62ewr", 32, 4, 2},
+                {"office", "i62ewr", 33, 2, 3},
+                {"libreoffice", "i62ewr", 34, 2, 5},
+                {"tdesktop", "i62ewr", 35, 1, 1},
+                {"sicome", "i62ewr", 36, 2, 5},
+                {"php", "i62ewr", 37, 7, 1},
+                {"javascript", "i62ewr", 38, 5, 1},
+                {"run.sh", "i62ewr", 39, 1, 3},
+                {"mcafee.sh", "i62ewr", 40, 1, 4},
+                {"sublime", "i62ewr", 41, 1, 1},
+                {"opencv.sh", "i62ewr", 42, 1, 1},
+                {"gnuplot", "i62ewr", 43, 1, 1}
             },
             new String [] {
                 "Name", "User", "ID", "% CPU", "% RAM"
@@ -238,43 +237,19 @@ public class Principal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setDragEnabled(true);
         jScrollPane1.setViewportView(jTable1);
         jTable1.setAutoCreateRowSorter(true);
-
-        jTextField1.setText("jTextField1");
-
-        jButton1.setText("Crear Proceso");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(59, 59, 59))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Procesos", new javax.swing.ImageIcon(getClass().getResource("/images/procesos.png")), jPanel3); // NOI18N
@@ -390,10 +365,6 @@ public class Principal extends javax.swing.JFrame {
         secondWindow.setVisible(true);
         secondWindow.setLocationRelativeTo(null);
     }//GEN-LAST:event_jList1MouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -430,7 +401,6 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -453,7 +423,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private Plot.Plot plot1;
     private Progress.progressCircleBar progressCircleBar1;
     private Progress.progressCircleBar progressCircleBar2;
