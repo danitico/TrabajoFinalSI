@@ -45,9 +45,9 @@ public class progressCircleBar extends javax.swing.JPanel {
 
         setLayout(null);
 
-        jLabel1.setText("0%");
+        jLabel1.setText(" 0%");
         add(jLabel1);
-        jLabel1.setBounds(30, 30, 30, 14);
+        jLabel1.setBounds(20, 30, 30, 14);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Progress/IMAGENES/0.png"))); // NOI18N
         add(jLabel2);

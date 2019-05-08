@@ -3,39 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Plot;
-
+package Termometro;
 /**
  *
  * @author Usuario
  */
-public class Plot extends javax.swing.JPanel {
-    private int i1=0;
-    private int i2=0; 
-    private int i3=0; 
-
+public class Termometro extends javax.swing.JPanel {
+    private double temperature;
     /**
-     * Creates new form Plot
+     * Creates new form Termometro
      */
-    public Plot() {
+    public Termometro(double base) {
         initComponents();
+        setTemperature(base);
+        
     }
+    public void setTemperature(double b){
+        temperature=b;
+        if(temperature<20){
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Termometro/IMAGENES/1.png"))); // NOI18N
+        }
+        else if(temperature<30&&temperature>=20){
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Termometro/IMAGENES/2.png"))); // NOI18N
 
-    public void setNextImage(){
-            i3++;
-            if(i3==10){
-                i3=0;
-                i2++;
-                if(i2==10){
-                    i2=0;
-                    i1++;
-                }
-            }
-            if(i1==1&&i2==4&i3==9){
-                i1=i2=i3=0;
-            }
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Plot/IMAGENES/frame"+String.valueOf(i1)+String.valueOf(i2)+String.valueOf(i3)+"0.png"))); // NOI18N
+        }
+        else if(temperature<40&&temperature>=30){
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Termometro/IMAGENES/3.png"))); // NOI18N
+        }
+        else{
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Termometro/IMAGENES/4.png"))); // NOI18N
+
+        }
     }
+    public double getTemperature(){return temperature;}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,7 +47,7 @@ public class Plot extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Plot/IMAGENES/frame0000.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Termometro/IMAGENES/1.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
