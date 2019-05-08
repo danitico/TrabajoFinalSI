@@ -11,7 +11,9 @@ package Particiones;
  * @author Usuario
  */
 public class rueda extends javax.swing.JPanel {
-    private int particionSenyalada=0;
+    private int particionSenyalada=1;
+    private int []estadoParticion={1,2,3};
+
     /**
      * Creates new form rueda
      */
@@ -20,46 +22,58 @@ public class rueda extends javax.swing.JPanel {
     }
    
     public void eliminarParticion1(){
+        estadoParticion[0]=0;
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion1Gr.png"))); // NOI18N
 
     }
         public void eliminarParticion2(){
+            estadoParticion[1]=0;
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion2Gr.png"))); // NOI18N
 
     }
     public void eliminarParticion3(){
+        estadoParticion[2]=0;
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion3Gr.png"))); // NOI18N
     }
     public void setParticion1azul(){
+        estadoParticion[0]=1;
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion1.png"))); // NOI18N
     }
     public void setParticion1amarillo(){
+        estadoParticion[0]=3;
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion1Am.png"))); // NOI18N
     }
-    public void swetParticion1Rojo(){
+    public void setParticion1Rojo(){
+        estadoParticion[0]=2;
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion1Ro.png"))); // NOI18N
     }
     public void setParticion2azul(){
+        estadoParticion[1]=1;
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion2Az.png"))); // NOI18N
     }
     public void setParticion2amarillo(){
+        estadoParticion[1]=3;
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion2Am.png"))); // NOI18N
     }
-    public void swetParticion2Rojo(){
+    public void setParticion2Rojo(){
+        estadoParticion[1]=2;
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion2.png"))); // NOI18N
     }
     public void setParticion3azul(){
+        estadoParticion[2]=1;
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion3Az.png"))); // NOI18N
     }
     public void setParticion3amarillo(){
+        estadoParticion[2]=3;
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion3.png"))); // NOI18N
     }
-    public void swetParticion3Rojo(){
+    public void setParticion3Rojo(){
+        estadoParticion[2]=2;
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion3Ro.png"))); // NOI18N
     }
     
     public int getParticionSenyalada(){
-        return particionSenyalada;
+        return estadoParticion[particionSenyalada-1];
     }
     /**
      * This method is called from within the constructor to initialize the form.
