@@ -13,9 +13,9 @@ public class Termometro extends javax.swing.JPanel {
     /**
      * Creates new form Termometro
      */
-    public Termometro(double base) {
+    public Termometro() {
         initComponents();
-        setTemperature(base);
+        setTemperature(20);
         
     }
     public void setTemperature(double b){

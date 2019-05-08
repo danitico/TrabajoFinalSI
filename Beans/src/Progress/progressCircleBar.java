@@ -15,9 +15,9 @@ public class progressCircleBar extends javax.swing.JPanel {
     /**
      * Creates new form progressCircleBar
      */
-    public progressCircleBar(int i) {
+    public progressCircleBar() {
         initComponents();
-        setProgress(i);
+        setProgress(0);
     }
 
     public void setProgress(int i){
