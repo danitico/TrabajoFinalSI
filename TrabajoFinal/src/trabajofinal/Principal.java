@@ -253,7 +253,10 @@ public class Principal extends javax.swing.JFrame {
                 {"mcafee.sh", "i62ewr", 40, 1, 4},
                 {"sublime", "i62ewr", 41, 1, 1},
                 {"opencv.sh", "i62ewr", 42, 1, 1},
-                {"gnuplot", "i62ewr", 43, 1, 1}
+                {"b.sh", "admin", 43, 1, 2},
+                {"spotify", "infoweb", 44, 1, 5},
+                {"sklearn", "i62rapad", 45, 1, 5},
+                {"go", "i62uco", 46, 4, 1}
             },
             new String [] {
                 "Name", "User", "ID", "% CPU", "% RAM"
@@ -286,9 +289,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Procesos", jPanel3);
@@ -312,15 +313,30 @@ public class Principal extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList2MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jList2);
 
         jLabel1.setText("GRUPOS");
 
         jLabel2.setText("USUARIOS");
 
-        jButton4.setText("jButton4");
+        jButton4.setText("Crear Usuario");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("jButton5");
+        jButton5.setText("Crear Grupo");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -330,10 +346,10 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -439,11 +455,36 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        JFrame secondWindow = new InfoUsuario(jList1.getModel().getElementAt(jList1.getSelectedIndex()));
-        secondWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        secondWindow.setVisible(true);
-        secondWindow.setLocationRelativeTo(null);
+        if(evt.getClickCount() == 2){
+            JFrame secondWindow = new InfoUsuario(jList1.getModel().getElementAt(jList1.getSelectedIndex()));
+            secondWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            secondWindow.setVisible(true);
+            secondWindow.setLocationRelativeTo(null);
+        }
     }//GEN-LAST:event_jList1MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        JFrame thirdWindow = new CrearUsuario();
+        thirdWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        thirdWindow.setVisible(true);
+        thirdWindow.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
+        if(evt.getClickCount() == 2){
+            JFrame fifthWindow = new InfoGrupo(jList2.getModel().getElementAt(jList2.getSelectedIndex()));
+            fifthWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            fifthWindow.setVisible(true);
+            fifthWindow.setLocationRelativeTo(null);
+        }
+    }//GEN-LAST:event_jList2MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        JFrame fourthWindow = new CrearGrupo();
+        fourthWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        fourthWindow.setVisible(true);
+        fourthWindow.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton5ActionPerformed
     /**
      * @param args the command line arguments
      */
