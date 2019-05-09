@@ -72,6 +72,9 @@ public class rueda extends javax.swing.JPanel {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Particiones/IMAGENES/particion3Ro.png"))); // NOI18N
     }
     
+    public int getParticionSenyaladaOriginal(){
+        return particionSenyalada;
+    }
     public int getParticionSenyalada(){
         return estadoParticion[particionSenyalada-1];
     }

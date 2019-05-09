@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.util.Random;
 import java.awt.Font;
 import javax.swing.JOptionPane;
+import java.awt.CardLayout;
 
 /**
  *
@@ -20,7 +21,7 @@ import javax.swing.JOptionPane;
  */
 public class Principal extends javax.swing.JFrame {
     private double eliminada=0;
-    String[] [] st= { {"Particion:\tA", "Memoria:2GB", "Usada: 1GB", "Libre: 1GB" },{"Particion:B", "Memoria:1.64GB", "Usada: 1GB", "Libre: 640MB"},{"Particion:C", "Memoria:12GB", "Usada: 1GB", "Libre: 11GB"}};
+    String[] [] st= { {}, {"Particion:\tA", "Memoria:2GB", "Usada: 1GB", "Libre: 1GB" },{"Particion:B", "Memoria:1.64GB", "Usada: 1GB", "Libre: 640MB"},{"Particion:C", "Memoria:12GB", "Usada: 1GB", "Libre: 11GB"}};
     private int cpu1=10;
     private int cpu2=50;
     private int cpu3=30;
@@ -31,6 +32,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal(){
         initComponents();
+        
         Random rand = new Random();
         this.setLocationRelativeTo(null);
         this.setTitle("Monitor del Sistema Linux");
@@ -67,15 +69,30 @@ public class Principal extends javax.swing.JFrame {
         {
          @Override
             public void actionPerformed(ActionEvent e)
-            { if(rueda2.getParticionSenyalada()>0){
+            { CardLayout card = (CardLayout)jPanel7.getLayout();
+                if(rueda1.getParticionSenyalada()>=1){
+                card.show(jPanel7, "card2");
                 jList3.setModel(new javax.swing.AbstractListModel<String>() {
                 
-                 public int getSize() { return st[rueda2.getParticionSenyalada()-1].length; }
-                public String getElementAt(int i) { return st[rueda2.getParticionSenyalada()-1][i]; }
+                 public int getSize() { return st[rueda1.getParticionSenyalada()].length; }
+                public String getElementAt(int i) { return st[rueda1.getParticionSenyalada()][i]; }
             });
             }
                 else{ 
-                 jList3.setModel(new javax.swing.AbstractListModel<String>() {
+                if(rueda1.getParticionSenyaladaOriginal()==1){
+                    jButton6.setText("Añadir a la particion 2");
+                    jButton7.setText("Añadir a la particion 3");
+                }
+                if(rueda1.getParticionSenyaladaOriginal()==2){
+                    jButton6.setText("Añadir a la particion 1");
+                    jButton7.setText("Añadir a la particion 3");
+                }
+                if(rueda1.getParticionSenyaladaOriginal()==3){
+                    jButton6.setText("Añadir a la particion 1");
+                    jButton7.setText("Añadir a la particion 2");
+                }
+                card.show(jPanel7, "card3");
+                 jList4.setModel(new javax.swing.AbstractListModel<String>() {
                 String[] st2=  {"Particion Libre", "Memoria:"+String.valueOf(eliminada)+"GB", "No utilizada" };
                  public int getSize() { return st2.length; }
                 public String getElementAt(int i) { return st2[i]; }
@@ -127,15 +144,22 @@ public class Principal extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        rueda2 = new Particiones.rueda();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jList4 = new javax.swing.JList<>();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        rueda1 = new Particiones.rueda();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -392,7 +416,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -427,6 +451,20 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane1.addTab("Usuarios y Grupos", jPanel4);
         jTabbedPane1.setMnemonicAt(3, KeyEvent.VK_4);
 
+        jLabel9.setText("PARTICIONES");
+        jLabel9.setFont(new Font("Courier New", Font.BOLD, 22));
+
+        jLabel10.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel10.setText("Particion 3");
+
+        jLabel11.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel11.setText("Particion 1");
+
+        jLabel12.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel12.setText("Particion 2");
+
+        jPanel7.setLayout(new java.awt.CardLayout());
+
         jPanel6.setBackground(new java.awt.Color(210, 210, 210));
 
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
@@ -438,6 +476,15 @@ public class Principal extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 0, 0));
         jButton1.setText("ELIMINAR PARTICION");
+        jButton1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jButton1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -469,68 +516,140 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
-        jLabel9.setText("PARTICIONES");
-        jLabel9.setFont(new Font("Courier New", Font.BOLD, 22));
+        jPanel7.add(jPanel6, "card2");
 
-        jLabel10.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel10.setText("Particion 3");
+        jPanel8.setBackground(new java.awt.Color(210, 210, 210));
 
-        jLabel11.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel11.setText("Particion 1");
+        jList4.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane5.setViewportView(jList4);
 
-        jLabel12.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel12.setText("Particion 2");
+        jButton6.setText("Añadir a la particion");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Añadir a la particion ");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jButton7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton7KeyPressed(evt);
+            }
+        });
+
+        jButton8.setText("Nueva partición");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+        );
+
+        jPanel7.add(jPanel8, "card3");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(18, 18, 18)
-                                .addComponent(rueda2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 26, Short.MAX_VALUE))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(131, 131, 131))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(138, 138, 138))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(79, 79, 79))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(173, 173, 173)
                                 .addComponent(jLabel9))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(180, 180, 180)
-                                .addComponent(jLabel10)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                                .addGap(59, 59, 59)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rueda1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(87, 87, 87)))
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(36, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
                         .addComponent(jLabel9)
-                        .addGap(27, 27, 27)
+                        .addGap(37, 37, 37)
                         .addComponent(jLabel12)
-                        .addGap(16, 16, 16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addComponent(rueda2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rueda1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jLabel10)))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Particiones", jPanel5);
@@ -568,9 +687,9 @@ public class Principal extends javax.swing.JFrame {
         int YesOrNo = JOptionPane.showConfirmDialog(null,"¿Estas seguro que quieres eliminar la partición?","Eliminar Particion", JOptionPane.YES_NO_OPTION);
         if(YesOrNo == 0)
         {
-            if(rueda2.getParticionSenyalada()==1){ rueda2.eliminarParticion1();eliminada+=2;}
-            if(rueda2.getParticionSenyalada()==2){ rueda2.eliminarParticion2();eliminada+=1.6;}
-            if(rueda2.getParticionSenyalada()==3){ rueda2.eliminarParticion3();eliminada+=12;}            
+            if(rueda1.getParticionSenyalada()==1){ rueda1.eliminarParticion1();eliminada+=2;jLabel11.setText("");}
+            if(rueda1.getParticionSenyalada()==2){ rueda1.eliminarParticion2();eliminada+=1.6;jLabel12.setText("");}
+            if(rueda1.getParticionSenyalada()==3){ rueda1.eliminarParticion3();eliminada+=12;jLabel10.setText("");}            
         }
                                              
 
@@ -582,7 +701,9 @@ public class Principal extends javax.swing.JFrame {
         thirdWindow.setVisible(true);
         thirdWindow.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton4ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
+    }    
     private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
         if(evt.getClickCount() == 2){
             JFrame fifthWindow = new InfoGrupo(jList2.getModel().getElementAt(jList2.getSelectedIndex()));
@@ -598,6 +719,71 @@ public class Principal extends javax.swing.JFrame {
         fourthWindow.setVisible(true);
         fourthWindow.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jButton1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1AncestorAdded
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+       if(rueda1.getParticionSenyaladaOriginal()==1){
+            rueda1.setParticion1Rojo();
+        }
+       if(rueda1.getParticionSenyaladaOriginal()==2){
+            rueda1.setParticion2azul();
+       }
+       if(rueda1.getParticionSenyaladaOriginal()==3){
+            rueda1.setParticion3azul();
+        }        
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        if(rueda1.getParticionSenyaladaOriginal()==1){
+            rueda1.setParticion1azul();
+            jLabel11.setText("Particion 1");
+
+        }
+
+        if(rueda1.getParticionSenyaladaOriginal()==2){
+            rueda1.setParticion2Rojo();
+            jLabel12.setText("Particion 2");
+
+        }
+
+        if(rueda1.getParticionSenyaladaOriginal()==3){
+            rueda1.setParticion3amarillo();
+            jLabel10.setText("Particion 3");
+
+        }
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7KeyPressed
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+       if(rueda1.getParticionSenyaladaOriginal()==1){
+            rueda1.setParticion1amarillo();
+        }
+       if(rueda1.getParticionSenyaladaOriginal()==2){
+            rueda1.setParticion2amarillo();
+       }
+       if(rueda1.getParticionSenyaladaOriginal()==3){
+            rueda1.setParticion3Rojo();
+        }
+       
+    }//GEN-LAST:event_jButton7MouseClicked
     /**
      * @param args the command line arguments
      */
@@ -639,6 +825,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -654,16 +843,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
+    private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private Plot.Plot plot1;
@@ -672,7 +865,7 @@ public class Principal extends javax.swing.JFrame {
     private Progress.progressCircleBar progressCircleBar3;
     private Progress.progressCircleBar progressCircleBar4;
     private Progress.progressCircleBar progressCircleBar5;
-    private Particiones.rueda rueda2;
+    private Particiones.rueda rueda1;
     private Termometro.Termometro termometro1;
     // End of variables declaration//GEN-END:variables
 }
